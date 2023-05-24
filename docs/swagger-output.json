@@ -1,0 +1,1013 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "High Street Gym ",
+    "description": "JSON REST API for Dynamic Gym website "
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8090"
+    }
+  ],
+  "basePath": "",
+  "paths": {
+    "/docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/activity/upload/xml": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/activity": {
+      "post": {
+        "summary": "Create an activity",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Adding new booking",
+          "content": {
+            "application/json": {
+              "schema": {
+                "activity_name": "string",
+                "activity_description": "number",
+                "activity_duration": "string"
+              },
+              "example": {
+                "activity_name": "Yoga",
+                "activity_description": "Yoga is a physical, mental, and spiritual practice",
+                "activity_duration": "30 minutes"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all activity",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an existing activity",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Update an existing activity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "activity_name": "string",
+                "activity_description": "string",
+                "activity_duration": "string",
+                "activity_id": "number"
+              },
+              "example": {
+                "activity_name": "Yogaga",
+                "activity_description": "Yoga is a physical, mental, and spiritual practice",
+                "activity_duration": "30 minutes",
+                "activity_id": 1
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific activity by ID",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Deleting a activity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "activity_id": "number"
+              },
+              "example": {
+                "activity_id": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/activity/{id}": {
+      "get": {
+        "summary": "Get a specific activity by ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/blog_post": {
+      "post": {
+        "summary": "Create a blog_post",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Adding new blog_post",
+          "content": {
+            "application/json": {
+              "schema": {
+                "blog_post_user_id": "number",
+                "blog_post_class_id": "number",
+                "blog_post_created_date_time": "string"
+              },
+              "example": {
+                "blog_post_user_id": 1,
+                "blog_post_class_id": 1,
+                "blog_post_created_date_time": "2023/10/20"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all blog_post",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an existing blog_post",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Update an existing blog_post",
+          "content": {
+            "application/json": {
+              "schema": {
+                "blog_post_user_id": "number",
+                "blog_post_class_id": "number",
+                "blog_post_created_date_time": "string",
+                "blog_post_id": "number"
+              },
+              "example": {
+                "blog_post_user_id": 110,
+                "blog_post_class_id": 110,
+                "blog_post_created_date_time": "2023/04/10",
+                "blog_post_id": 1
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific blog_post by ID",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Deleting a blog_post",
+          "content": {
+            "application/json": {
+              "schema": {
+                "blog_post_id": "number"
+              },
+              "example": {
+                "blog_post_id": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/blog_post/{id}": {
+      "get": {
+        "summary": "Get a specific blog_post by ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/booking": {
+      "post": {
+        "summary": "Create a booking",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Adding new booking",
+          "content": {
+            "application/json": {
+              "schema": {
+                "booking_user_id": "number",
+                "booking_class_id": "number",
+                "booking_created_date_time": "string"
+              },
+              "example": {
+                "booking_user_id": 1,
+                "booking_class_id": 1,
+                "booking_created_date_time": "2023/10/20"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all booking",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an existing booking",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Update an existing booking",
+          "content": {
+            "application/json": {
+              "schema": {
+                "booking_user_id": "number",
+                "booking_class_id": "number",
+                "booking_created_date_time": "string",
+                "booking_id": "number"
+              },
+              "example": {
+                "booking_user_id": 110,
+                "booking_class_id": 110,
+                "booking_created_date_time": "2023/04/10",
+                "booking_id": 1
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific booking by ID",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Deleting a booking",
+          "content": {
+            "application/json": {
+              "schema": {
+                "booking_id": "number"
+              },
+              "example": {
+                "booking_id": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/booking/{id}": {
+      "get": {
+        "summary": "Get a specific booking by ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/booking/class/{id}": {
+      "get": {
+        "summary": "Get a specific booking by ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/booking/staff/{id}": {
+      "get": {
+        "summary": "Get a specific booking by ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/class": {
+      "post": {
+        "summary": "Create a class",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Adding new class",
+          "content": {
+            "application/json": {
+              "schema": {
+                "class_date_time": "string",
+                "class_room_id": "number",
+                "class_activity_id": "number",
+                "class_trainer_user_id": "number"
+              },
+              "example": {
+                "class_date_time": "2023/10/20",
+                "class_room_id": 110,
+                "class_activity_id": 1,
+                "class_trainer_user_id": 1
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all class",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an existing class",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Update an existing class",
+          "content": {
+            "application/json": {
+              "schema": {
+                "class_date_time": "string",
+                "class_room_id": "number",
+                "class_activity_id": "number",
+                "class_trainer_user_id": "number",
+                "class_id": "number"
+              },
+              "example": {
+                "class_date_time": "2023/10/20",
+                "class_room_id": 110,
+                "class_activity_id": 1,
+                "class_trainer_user_id": 1,
+                "class_id": 1
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific class by ID",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Deleting a class",
+          "content": {
+            "application/json": {
+              "schema": {
+                "class_id": "number"
+              },
+              "example": {
+                "class_id": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/class/{id}": {
+      "get": {
+        "summary": "Get a specific class by ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/class/activity/{id}": {
+      "get": {
+        "summary": "Get a specific class by ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/room/upload/xml": {
+      "post": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/room": {
+      "post": {
+        "summary": "Create a room",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Adding new room",
+          "content": {
+            "application/json": {
+              "schema": {
+                "room_location": "string",
+                "room_number": "number"
+              },
+              "example": {
+                "room_location": "Block A",
+                "room_number": 205
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all room",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an existing room",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Update an existing room",
+          "content": {
+            "application/json": {
+              "schema": {
+                "room_location": "string",
+                "room_number": "number",
+                "room_id": "number"
+              },
+              "example": {
+                "room_location": "Block G",
+                "room_number": 303,
+                "room_id": 1
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific room by ID",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Deleting a room",
+          "content": {
+            "application/json": {
+              "schema": {
+                "room_id": "number"
+              },
+              "example": {
+                "room_id": "1"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/room/{id}": {
+      "get": {
+        "summary": "Get a specific room by ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/staff": {
+      "post": {
+        "summary": "Create a staff",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Adding new staff",
+          "content": {
+            "application/json": {
+              "schema": {
+                "email": "string",
+                "staff_password": "string",
+                "role": "string",
+                "phone": "string",
+                "first_name": "string",
+                "last_name": "string",
+                "address": "string"
+              },
+              "example": {
+                "email": "lingCH@server.com",
+                "staff_password": "123",
+                "role": "admin",
+                "phone": "4735658925",
+                "first_name": "Jack",
+                "last_name": "CHUNG",
+                "address": "128 Hassall St"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all staff",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an existing staff",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Update an existing staff",
+          "content": {
+            "application/json": {
+              "schema": {
+                "authenticationKey": "string",
+                "id": "string",
+                "email": "string",
+                "password": "string",
+                "role": "string",
+                "firstName": "string",
+                "lastName": "string",
+                "create_time": "string"
+              },
+              "example": {
+                "authenticationKey": "c2a5afbe-f7a0-4e0a-997d-9cb9241ec52e",
+                "id": "6413fc98f808c06fab425866",
+                "email": "lingCH333@server.com",
+                "password": "lingCH",
+                "role": "admin",
+                "firstName": "Test",
+                "lastName": "staff",
+                "create_time": "03/03/2021"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a specific staff by ID",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Deleting a staff",
+          "content": {
+            "application/json": {
+              "schema": {
+                "authenticationKey": "string",
+                "id": "string"
+              },
+              "example": {
+                "authenticationKey": "c2a5afbe-f7a0-4e0a-997d-9cb9241ec52e",
+                "id": "640ec1f2a499175ad989b26c"
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update staff access level by ID ",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "Update staff access level ",
+          "content": {
+            "application/json": {
+              "schema": {
+                "authenticationKey": "string",
+                "role": "string",
+                "startDate": "string",
+                "endDate": "string"
+              },
+              "example": {
+                "authenticationKey": "c2a5afbe-f7a0-4e0a-997d-9cb9241ec52e",
+                "role": "manager",
+                "start_date": "01/01/2021",
+                "end_date": "01/01/2024"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/staff/login": {
+      "post": {
+        "summary": "staff Login",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "staff Login",
+          "content": {
+            "application/json": {
+              "schema": {
+                "email": "string",
+                "password": "string"
+              },
+              "example": {
+                "email": "lingCH@server.com",
+                "password": "123"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/staff/logout": {
+      "post": {
+        "summary": "staff Logout",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "description": "staff Logout",
+          "content": {
+            "application/json": {
+              "schema": {
+                "authenticationKey": "string"
+              },
+              "example": {
+                "authenticationKey": "55d1ebc9-779a-4e2e-8907-184cca7b21f2"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/staff/{id}": {
+      "get": {
+        "summary": "Get a specific staff by ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/staff/by-key/{authenticationKey}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authenticationKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "schemas": [
+    "http"
+  ]
+}
